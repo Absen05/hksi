@@ -1,0 +1,29 @@
+{
+  "eyebrow": "Kontak",
+  "title": "Diskusikan kebutuhan proyek bersama HKSI.",
+  "phone_display": "0895 0243 1727",
+  "phone_link": "+6289502431727",
+  "whatsapp_phone": "6289502431727",
+  "whatsapp_default_message": "Halo PT Hasta Karya Sejahtera Indonesia, saya ingin mendapatkan informasi mengenai layanan HKSI.",
+  "email": "pt.hastakaryasejahteraind@gmail.com",
+  "address": "Kota Cilegon, Banten",
+  "map_label": "Peta area layanan HKSI Cilegon Banten",
+  "map_title": "Peta Cilegon Banten",
+  "map_query": "Cilegon Banten",
+  "form": {
+    "name_label": "Nama",
+    "company_label": "Perusahaan",
+    "service_label": "Kebutuhan Layanan",
+    "service_placeholder": "Pilih layanan",
+    "message_label": "Ringkasan Kebutuhan",
+    "submit_label": "Kirim via WhatsApp",
+    "required_message": "Lengkapi nama, layanan, dan ringkasan kebutuhan.",
+    "loading_message": "Membuka WhatsApp untuk mengirim pesan.",
+    "services": [
+      "Supply Material",
+      "Laboratorium & Pengujian",
+      "Survey & Pengukuran",
+      "Konsultansi Teknik Sipil"
+    ]
+  }
+}

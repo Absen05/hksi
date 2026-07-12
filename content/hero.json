@@ -1,0 +1,16 @@
+{
+  "eyebrow": "Engineering, Survey, Laboratory, Construction Support",
+  "title": "PT Hasta Karya Sejahtera Indonesia",
+  "lead": "Solusi Tepat, Hasil Terbaik.",
+  "text": "Mitra profesional untuk pengujian material konstruksi, survey dan pengukuran, supply material, serta dukungan teknis proyek sipil dan industri.",
+  "image": "assets/img/hero/hero-main.png",
+  "image_alt": "Dokumentasi proyek engineering dan konstruksi HKSI",
+  "primary_button": {
+    "label": "Konsultasi Proyek",
+    "url": "#contact"
+  },
+  "secondary_button": {
+    "label": "Lihat Portfolio",
+    "url": "project.html"
+  }
+}

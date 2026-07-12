@@ -1,0 +1,36 @@
+{
+  "eyebrow": "Client Sector",
+  "title": "Disiapkan untuk standar kerja sektor korporasi dan proyek teknis.",
+  "items": [
+    {
+      "name": "Industrial Company",
+      "logo": "",
+      "url": ""
+    },
+    {
+      "name": "Government Procurement",
+      "logo": "",
+      "url": ""
+    },
+    {
+      "name": "Mining & Energy",
+      "logo": "",
+      "url": ""
+    },
+    {
+      "name": "Oil & Gas Support",
+      "logo": "",
+      "url": ""
+    },
+    {
+      "name": "Civil Contractor",
+      "logo": "",
+      "url": ""
+    },
+    {
+      "name": "Engineering Consultant",
+      "logo": "",
+      "url": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "home": {
+    "title": "PT Hasta Karya Sejahtera Indonesia | Solusi Tepat, Hasil Terbaik",
+    "description": "PT Hasta Karya Sejahtera Indonesia (HKSI) adalah mitra engineering untuk survey, laboratorium, pengujian material konstruksi, supply material, dan konsultansi teknik sipil.",
+    "canonical": "https://www.hksi.co.id/",
+    "og_type": "website",
+    "og_title": "PT Hasta Karya Sejahtera Indonesia",
+    "og_description": "Solusi Tepat, Hasil Terbaik untuk kebutuhan engineering, survey, laboratorium, dan material konstruksi.",
+    "og_url": "https://www.hksi.co.id/",
+    "og_image": "https://www.hksi.co.id/assets/img/hero/hero-main.png",
+    "twitter_title": "PT Hasta Karya Sejahtera Indonesia",
+    "twitter_description": "Mitra engineering profesional untuk proyek konstruksi, industri, dan infrastruktur.",
+    "twitter_image": "https://www.hksi.co.id/assets/img/hero/hero-main.png"
+  },
+  "project": {
+    "title": "Portfolio Proyek | PT Hasta Karya Sejahtera Indonesia",
+    "description": "Portfolio proyek HKSI: dokumentasi pekerjaan survey, laboratorium, pengujian material konstruksi, supply material, dan dukungan engineering.",
+    "canonical": "https://www.hksi.co.id/project.html",
+    "og_type": "website",
+    "og_title": "Portfolio Proyek HKSI",
+    "og_description": "Dokumentasi pekerjaan engineering, survey, laboratorium, dan supply material PT Hasta Karya Sejahtera Indonesia.",
+    "og_url": "https://www.hksi.co.id/project.html",
+    "og_image": "https://www.hksi.co.id/assets/img/projects/project-laboratory-material.png",
+    "twitter_title": "Portfolio Proyek HKSI",
+    "twitter_description": "Dokumentasi pekerjaan engineering, survey, laboratorium, dan supply material PT Hasta Karya Sejahtera Indonesia.",
+    "twitter_image": "https://www.hksi.co.id/assets/img/projects/project-laboratory-material.png"
+  },
+  "schema": {
+    "name": "PT Hasta Karya Sejahtera Indonesia",
+    "alternate_name": "HKSI",
+    "description": "Perusahaan engineering untuk survey, laboratorium, pengujian material konstruksi, supply material, dan konsultansi teknik sipil.",
+    "telephone": "+6289502431727",
+    "email": "pt.hastakaryasejahteraind@gmail.com",
+    "locality": "Cilegon",
+    "region": "Banten",
+    "country": "ID",
+    "area_served": "Indonesia",
+    "slogan": "Solusi Tepat, Hasil Terbaik"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "not_found": {
+    "title": "Halaman Tidak Ditemukan | HKSI",
+    "description": "Halaman yang Anda cari tidak ditemukan di website PT Hasta Karya Sejahtera Indonesia.",
+    "eyebrow": "404",
+    "heading": "Halaman tidak ditemukan.",
+    "text": "Alamat yang Anda buka tidak tersedia atau sudah berubah. Gunakan navigasi berikut untuk kembali ke halaman resmi HKSI.",
+    "primary_button": {
+      "label": "Kembali ke Beranda",
+      "url": "index.html"
+    },
+    "secondary_button": {
+      "label": "Lihat Portfolio",
+      "url": "project.html"
+    }
+  },
+  "offline": {
+    "title": "Offline | HKSI",
+    "description": "Anda sedang offline. Beberapa halaman HKSI tetap tersedia melalui cache browser.",
+    "eyebrow": "Offline",
+    "heading": "Koneksi internet tidak tersedia.",
+    "text": "Halaman inti HKSI telah disiapkan untuk akses offline. Coba kembali setelah koneksi stabil untuk membuka peta, WhatsApp, dan konten eksternal.",
+    "primary_button": {
+      "label": "Buka Beranda",
+      "url": "index.html"
+    },
+    "secondary_button": {
+      "label": "Buka Portfolio",
+      "url": "project.html"
+    }
+  }
+}

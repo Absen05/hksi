@@ -1,0 +1,12 @@
+/service-worker.js
+  Cache-Control: no-cache
+
+/manifest.json
+  Cache-Control: no-cache
+
+/content/*
+  Cache-Control: no-cache
+
+/admin/*
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex, nofollow

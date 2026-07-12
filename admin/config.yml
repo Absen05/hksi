@@ -1,0 +1,414 @@
+# GitHub backend requires an OAuth provider that exchanges a GitHub login
+# for a token (Decap does not talk to GitHub directly). Options:
+#   1. Free: https://github.com/sterlingwes/netlify-cms-oauth-provider-node
+#      or https://github.com/vencax/netlify-cms-github-oauth-provider,
+#      deployed anywhere (Cloudflare Worker / Vercel / small VPS), then set:
+#        base_url: "https://your-oauth-provider.example.com"
+#        auth_endpoint: "auth"
+#   2. Netlify: create a free Netlify site (can point at nothing, or the
+#      same repo) purely to use its built-in OAuth provider, then set:
+#        base_url: "https://your-netlify-site.netlify.app"
+# Until base_url is set to a working provider, the "Login with GitHub"
+# button in /admin will fail — this is the one manual step left.
+backend:
+  name: github
+  repo: Absen05/hksi
+  branch: main
+  # base_url: "https://your-oauth-provider.example.com"
+  # auth_endpoint: "auth"
+
+# Enables local testing with `npx decap-server` (safe to leave in; it is
+# only active when Decap is run on localhost).
+local_backend: true
+
+media_folder: "assets/img/uploads"
+public_folder: "assets/img/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  # ---------------------------------------------------------------------
+  # Singleton site content — one JSON file per entry, edited as a page.
+  # ---------------------------------------------------------------------
+  - name: "pages"
+    label: "Site Content"
+    files:
+      - label: "Site Settings"
+        name: "settings"
+        file: "content/settings.json"
+        format: "json"
+        fields:
+          - {label: "Site Name", name: "site_name", widget: "string"}
+          - {label: "Short Name", name: "short_name", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Domain", name: "domain", widget: "string"}
+          - {label: "Logo (horizontal)", name: "logo", widget: "image"}
+          - {label: "Logo (white)", name: "logo_white", widget: "image"}
+          - {label: "Logo (color)", name: "logo_color", widget: "image"}
+          - {label: "Logo (icon)", name: "logo_icon", widget: "image"}
+          - {label: "Copyright Text", name: "copyright", widget: "string"}
+          - label: "Navigation — Home"
+            name: "navigation_home"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+          - label: "Navigation — Project Page"
+            name: "navigation_project"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+          - label: "Footer Navigation — Home"
+            name: "footer_navigation_home"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+          - label: "Footer Navigation — Project Page"
+            name: "footer_navigation_project"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+
+      - label: "SEO & Metadata"
+        name: "seo"
+        file: "content/seo.json"
+        format: "json"
+        fields:
+          - label: "Home Page"
+            name: "home"
+            widget: "object"
+            fields: &seo_page_fields
+              - {label: "Title Tag", name: "title", widget: "string"}
+              - {label: "Meta Description", name: "description", widget: "text"}
+              - {label: "Canonical URL", name: "canonical", widget: "string"}
+              - {label: "OG Type", name: "og_type", widget: "string"}
+              - {label: "OG Title", name: "og_title", widget: "string"}
+              - {label: "OG Description", name: "og_description", widget: "text"}
+              - {label: "OG URL", name: "og_url", widget: "string"}
+              - {label: "OG Image", name: "og_image", widget: "image"}
+              - {label: "Twitter Title", name: "twitter_title", widget: "string"}
+              - {label: "Twitter Description", name: "twitter_description", widget: "text"}
+              - {label: "Twitter Image", name: "twitter_image", widget: "image"}
+          - label: "Project Page"
+            name: "project"
+            widget: "object"
+            fields: *seo_page_fields
+          - label: "Organization Schema (JSON-LD)"
+            name: "schema"
+            widget: "object"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Alternate Name", name: "alternate_name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Telephone", name: "telephone", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Locality", name: "locality", widget: "string"}
+              - {label: "Region", name: "region", widget: "string"}
+              - {label: "Country Code", name: "country", widget: "string"}
+              - {label: "Area Served", name: "area_served", widget: "string"}
+              - {label: "Slogan", name: "slogan", widget: "string"}
+
+      - label: "Hero Section"
+        name: "hero"
+        file: "content/hero.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Lead", name: "lead", widget: "string"}
+          - {label: "Text", name: "text", widget: "text"}
+          - {label: "Hero Image", name: "image", widget: "image"}
+          - {label: "Hero Image Alt Text", name: "image_alt", widget: "string"}
+          - label: "Primary Button"
+            name: "primary_button"
+            widget: "object"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+          - label: "Secondary Button"
+            name: "secondary_button"
+            widget: "object"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+
+      - label: "About Section"
+        name: "about"
+        file: "content/about.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+          - {label: "Paragraphs", name: "paragraphs", widget: "list", field: {label: "Paragraph", name: "paragraph", widget: "text"}}
+
+      - label: "Vision"
+        name: "vision"
+        file: "content/vision.json"
+        format: "json"
+        fields:
+          - {label: "Index", name: "index", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Text", name: "text", widget: "text"}
+
+      - label: "Mission"
+        name: "mission"
+        file: "content/mission.json"
+        format: "json"
+        fields:
+          - {label: "Index", name: "index", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
+
+      - label: "Why Choose Us"
+        name: "why"
+        file: "content/why.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Text", name: "text", widget: "text"}
+
+      - label: "Statistics"
+        name: "statistics"
+        file: "content/statistics.json"
+        format: "json"
+        fields:
+          - {label: "ARIA Label", name: "aria_label", widget: "string"}
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Value", name: "value", widget: "number", value_type: "int"}
+              - {label: "Suffix", name: "suffix", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+
+      - label: "Contact"
+        name: "contact"
+        file: "content/contact.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Phone (display)", name: "phone_display", widget: "string"}
+          - {label: "Phone (tel: link)", name: "phone_link", widget: "string"}
+          - {label: "WhatsApp Number", name: "whatsapp_phone", widget: "string"}
+          - {label: "WhatsApp Default Message", name: "whatsapp_default_message", widget: "text"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Address", name: "address", widget: "string"}
+          - {label: "Map ARIA Label", name: "map_label", widget: "string"}
+          - {label: "Map Iframe Title", name: "map_title", widget: "string"}
+          - {label: "Map Search Query", name: "map_query", widget: "string"}
+          - label: "Contact Form"
+            name: "form"
+            widget: "object"
+            fields:
+              - {label: "Name Field Label", name: "name_label", widget: "string"}
+              - {label: "Company Field Label", name: "company_label", widget: "string"}
+              - {label: "Service Field Label", name: "service_label", widget: "string"}
+              - {label: "Service Placeholder", name: "service_placeholder", widget: "string"}
+              - {label: "Message Field Label", name: "message_label", widget: "string"}
+              - {label: "Submit Button Label", name: "submit_label", widget: "string"}
+              - {label: "Required Fields Message", name: "required_message", widget: "string"}
+              - {label: "Loading Message", name: "loading_message", widget: "string"}
+              - {label: "Service Options", name: "services", widget: "list", field: {label: "Service", name: "service", widget: "string"}}
+
+      - label: "Services Section (heading)"
+        name: "services_section"
+        file: "content/services.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+
+      - label: "Projects Section (heading + filters)"
+        name: "projects_section"
+        file: "content/projects.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+          - {label: "\"View All\" Button Label", name: "button_label", widget: "string"}
+          - {label: "\"View All\" Button URL", name: "button_url", widget: "string"}
+          - {label: "Page Eyebrow", name: "page_eyebrow", widget: "string"}
+          - {label: "Page Title", name: "page_title", widget: "string"}
+          - {label: "Page Intro Text", name: "page_text", widget: "text"}
+          - {label: "List Eyebrow", name: "list_eyebrow", widget: "string"}
+          - {label: "List Title", name: "list_title", widget: "text"}
+          - label: "Filter Buttons"
+            name: "filters"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Value", name: "value", widget: "string"}
+          - {label: "Related Eyebrow", name: "related_eyebrow", widget: "string"}
+          - {label: "Related Title", name: "related_title", widget: "text"}
+          - label: "Related Capability Items"
+            name: "related_items"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Text", name: "text", widget: "text"}
+
+      - label: "Gallery Section (heading)"
+        name: "gallery_section"
+        file: "content/gallery.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+
+      - label: "Clients / Sectors"
+        name: "clients"
+        file: "content/clients/section.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+          - label: "Sectors"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image", required: false}
+              - {label: "URL", name: "url", widget: "string", required: false}
+
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "content/testimonials/section.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+          - label: "Quotes"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Author / Source", name: "author", widget: "string"}
+
+      - label: "Legality Section"
+        name: "legality"
+        file: "content/legality/section.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+          - {label: "Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "text"}}
+
+      - label: "Call To Action (CTA)"
+        name: "cta"
+        file: "content/cta.json"
+        format: "json"
+        fields:
+          - label: "Home Page CTA"
+            name: "home"
+            widget: "object"
+            fields: &cta_fields
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "text"}
+              - {label: "Button Label", name: "button_label", widget: "string"}
+          - label: "Project Page CTA"
+            name: "project"
+            widget: "object"
+            fields: *cta_fields
+
+      - label: "Error / Offline Pages"
+        name: "errors"
+        file: "content/errors.json"
+        format: "json"
+        fields:
+          - label: "404 Not Found Page"
+            name: "not_found"
+            widget: "object"
+            fields: &error_page_fields
+              - {label: "Title Tag", name: "title", widget: "string"}
+              - {label: "Meta Description", name: "description", widget: "text"}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Text", name: "text", widget: "text"}
+              - label: "Primary Button"
+                name: "primary_button"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string"}
+              - label: "Secondary Button"
+                name: "secondary_button"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string"}
+          - label: "Offline Page"
+            name: "offline"
+            widget: "object"
+            fields: *error_page_fields
+
+  # ---------------------------------------------------------------------
+  # Repeatable folder collections — one JSON file per entry.
+  # ---------------------------------------------------------------------
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    summary: "{{order}} — {{title}}"
+    sortable_fields: ["order", "title"]
+    fields:
+      - {label: "Order", name: "order", widget: "number", value_type: "int"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+      - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    summary: "{{order}} — {{title}}"
+    sortable_fields: ["order", "title", "year"]
+    fields:
+      - {label: "Order", name: "order", widget: "number", value_type: "int"}
+      - {label: "Featured on Homepage", name: "featured", widget: "boolean", required: false, default: false}
+      - {label: "Category (filter key)", name: "category", widget: "select", options: ["laboratory", "supply", "survey"]}
+      - {label: "Tag", name: "tag", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Preview Description (homepage card)", name: "preview_description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+      - {label: "Lightbox Caption", name: "caption", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Work Performed", name: "work", widget: "string"}
+
+  - name: "gallery"
+    label: "Gallery"
+    folder: "content/gallery"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    summary: "{{order}} — {{caption}}"
+    sortable_fields: ["order"]
+    fields:
+      - {label: "Order", name: "order", widget: "number", value_type: "int"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Alt Text", name: "alt", widget: "string"}
+      - {label: "Caption", name: "caption", widget: "string"}

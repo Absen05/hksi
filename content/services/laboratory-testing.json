@@ -1,0 +1,12 @@
+{
+  "order": 2,
+  "title": "Laboratorium & Pengujian",
+  "description": "Pengujian dan analisa material untuk membantu proses kontrol kualitas pekerjaan konstruksi.",
+  "image": "assets/img/services/service-laboratory.png",
+  "image_alt": "Ilustrasi layanan laboratorium pengujian material",
+  "features": [
+    "Pengujian material konstruksi",
+    "Quality control lapangan",
+    "Analisa hasil pekerjaan"
+  ]
+}

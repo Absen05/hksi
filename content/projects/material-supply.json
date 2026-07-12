@@ -1,0 +1,15 @@
+{
+  "order": 2,
+  "featured": true,
+  "category": "supply",
+  "tag": "Supply",
+  "title": "Supply Material Proyek",
+  "description": "Pemenuhan kebutuhan material pendukung proyek konstruksi dengan koordinasi lapangan yang terstruktur.",
+  "preview_description": "Pemenuhan kebutuhan material untuk pekerjaan konstruksi dan lapangan.",
+  "image": "assets/img/projects/project-material-supply.png",
+  "image_alt": "Dokumentasi supply material proyek",
+  "caption": "Supply Material Proyek",
+  "location": "Area Industri Banten",
+  "year": "2026",
+  "work": "Penyediaan Material Konstruksi"
+}

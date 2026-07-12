@@ -1,0 +1,49 @@
+{
+  "eyebrow": "Portfolio",
+  "title": "Dokumentasi pekerjaan dan aktivitas lapangan.",
+  "button_label": "Buka Semua Proyek",
+  "button_url": "project.html",
+  "page_eyebrow": "Project Portfolio",
+  "page_title": "Dokumentasi Pekerjaan HKSI",
+  "page_text": "Rekam pekerjaan, aktivitas lapangan, dan dukungan teknis untuk kebutuhan konstruksi, engineering, survey, dan laboratorium.",
+  "list_eyebrow": "Daftar Proyek",
+  "list_title": "Portfolio profesional berdasarkan kategori layanan.",
+  "filters": [
+    {
+      "label": "Semua",
+      "value": "all"
+    },
+    {
+      "label": "Laboratorium",
+      "value": "laboratory"
+    },
+    {
+      "label": "Supply",
+      "value": "supply"
+    },
+    {
+      "label": "Survey",
+      "value": "survey"
+    }
+  ],
+  "related_eyebrow": "Related Capability",
+  "related_title": "Kapabilitas yang saling melengkapi untuk satu siklus pekerjaan proyek.",
+  "related_items": [
+    {
+      "title": "Data Lapangan",
+      "text": "Survey dan pengukuran membantu tim memahami kondisi aktual pekerjaan."
+    },
+    {
+      "title": "Kontrol Kualitas",
+      "text": "Pengujian material membantu memastikan hasil pekerjaan sesuai kebutuhan teknis."
+    },
+    {
+      "title": "Supply Support",
+      "text": "Material pendukung disiapkan untuk menjaga kelancaran pelaksanaan proyek."
+    },
+    {
+      "title": "Dokumentasi",
+      "text": "Catatan pekerjaan dan bukti visual membantu proses pelaporan serta evaluasi."
+    }
+  ]
+}

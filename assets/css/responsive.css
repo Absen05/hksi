@@ -1,0 +1,223 @@
+/* ===================================
+   HKSI RESPONSIVE CSS V0.9.1
+   Recovery Version
+=================================== */
+
+@media(max-width:991px){
+
+.header{
+    height:80px;
+}
+
+.navbar-custom{
+    height:80px;
+}
+
+.logo img{
+    width:180px;
+}
+
+.nav-menu{
+    display:none;
+}
+
+.menu-button{
+    display:block;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
+/* SECTION OFFSET */
+
+#beranda,
+#tentang,
+#layanan,
+#dokumentasi,
+#kontak{
+    scroll-margin-top:90px;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:850px;
+    height:100vh;
+    padding-top:80px;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:100%;
+    margin:0;
+    padding:25px;
+    text-align:center;
+}
+
+.hero-label{
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.hero-title{
+    font-size:2.8rem;
+    line-height:1.2;
+    margin:20px 0;
+}
+
+.hero-description{
+    font-size:1rem;
+    line-height:1.7;
+}
+
+.hero-button-group{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+
+/* BUTTON */
+
+.btn-primary-custom,
+.btn-secondary-custom{
+    width:100%;
+    max-width:330px;
+}
+
+
+/* SECTION */
+
+.about,
+.values,
+.services,
+.documentation,
+.contact-preview{
+    padding:70px 0;
+}
+
+
+.section-heading{
+    margin-bottom:35px;
+}
+
+.section-heading h2{
+    font-size:2rem;
+}
+
+
+/* CARDS */
+
+.value-cards,
+.service-cards{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.value-card,
+.service-card{
+    padding:35px 25px;
+}
+
+
+/* GALLERY */
+
+.gallery-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+}
+
+.gallery-item{
+    width:100%;
+}
+
+.gallery-item.portrait{
+    max-width:280px;
+    margin:auto;
+}
+
+
+/* FOOTER */
+
+.footer{
+    padding-top:60px;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.footer-brand img{
+    width:180px;
+}
+
+
+/* WHATSAPP */
+
+.whatsapp-button{
+    width:55px;
+    height:55px;
+    right:20px;
+    bottom:20px;
+}
+
+.whatsapp-button span{
+    font-size:28px;
+}
+
+}
+
+
+
+@media(max-width:576px){
+
+.logo img{
+    width:160px;
+}
+
+.hero{
+    min-height:750px;
+}
+
+.hero-title{
+    font-size:2.3rem;
+}
+
+.hero-description{
+    font-size:.95rem;
+}
+
+.section-heading h2{
+    font-size:1.8rem;
+}
+
+.section-label{
+    font-size:12px;
+}
+
+.value-card,
+.service-card{
+    padding:30px 20px;
+}
+
+.gallery-item.portrait{
+    max-width:240px;
+}
+
+.footer-brand img{
+    width:150px;
+}
+
+.whatsapp-button{
+    width:50px;
+    height:50px;
+}
+
+.whatsapp-button span{
+    font-size:24px;
+}
+
+}

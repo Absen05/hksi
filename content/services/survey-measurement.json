@@ -1,0 +1,12 @@
+{
+  "order": 3,
+  "title": "Survey & Pengukuran",
+  "description": "Layanan pengukuran teknis untuk pemetaan, pemeriksaan, dan kebutuhan data proyek.",
+  "image": "assets/img/services/service-survey.png",
+  "image_alt": "Ilustrasi survey dan pengukuran teknik",
+  "features": [
+    "Survey lapangan",
+    "Pengukuran teknis",
+    "Dokumentasi dan data pekerjaan"
+  ]
+}

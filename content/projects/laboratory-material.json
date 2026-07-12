@@ -1,0 +1,15 @@
+{
+  "order": 1,
+  "featured": true,
+  "category": "laboratory",
+  "tag": "Laboratorium",
+  "title": "Pengujian Material Konstruksi",
+  "description": "Pengujian dan pemeriksaan material untuk membantu proses kontrol kualitas pekerjaan konstruksi.",
+  "preview_description": "Kontrol kualitas material untuk mendukung keputusan teknis proyek.",
+  "image": "assets/img/projects/project-laboratory-material.png",
+  "image_alt": "Dokumentasi pengujian material konstruksi",
+  "caption": "Pengujian Material Konstruksi",
+  "location": "Cilegon, Banten",
+  "year": "2026",
+  "work": "Laboratorium & Quality Control"
+}

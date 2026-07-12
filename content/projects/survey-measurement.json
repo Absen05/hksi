@@ -1,0 +1,15 @@
+{
+  "order": 3,
+  "featured": true,
+  "category": "survey",
+  "tag": "Survey",
+  "title": "Survey dan Pengukuran",
+  "description": "Pengumpulan data teknis lapangan untuk mendukung perencanaan, pelaksanaan, dan evaluasi pekerjaan.",
+  "preview_description": "Pengumpulan data lapangan untuk kebutuhan pekerjaan teknik sipil.",
+  "image": "assets/img/projects/project-survey-measurement.png",
+  "image_alt": "Dokumentasi survey dan pengukuran proyek",
+  "caption": "Survey dan Pengukuran",
+  "location": "Area Proyek",
+  "year": "2026",
+  "work": "Survey Lapangan & Data Teknis"
+}

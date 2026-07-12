@@ -1,0 +1,61 @@
+{
+  "id": "/",
+  "name": "PT Hasta Karya Sejahtera Indonesia",
+  "short_name": "HKSI",
+  "description": "Company profile PT Hasta Karya Sejahtera Indonesia untuk layanan engineering, survey, laboratorium, pengujian material, dan supply material konstruksi.",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#D4AF37",
+  "categories": [
+    "business",
+    "engineering",
+    "construction"
+  ],
+  "icons": [
+    {
+      "src": "assets/img/logo/logo-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/logo/logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Layanan HKSI",
+      "short_name": "Layanan",
+      "description": "Lihat layanan utama HKSI",
+      "url": "/index.html#services",
+      "icons": [
+        {
+          "src": "assets/img/logo/logo-icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Portfolio HKSI",
+      "short_name": "Portfolio",
+      "description": "Lihat dokumentasi pekerjaan HKSI",
+      "url": "/project.html",
+      "icons": [
+        {
+          "src": "assets/img/logo/logo-icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

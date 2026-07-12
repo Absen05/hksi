@@ -1,0 +1,12 @@
+{
+  "order": 1,
+  "title": "Supply Material",
+  "description": "Penyediaan material pendukung konstruksi untuk kebutuhan lapangan, pekerjaan sipil, dan operasional proyek.",
+  "image": "assets/img/services/service-material.png",
+  "image_alt": "Ilustrasi supply material konstruksi",
+  "features": [
+    "Pengadaan material proyek",
+    "Support kebutuhan lapangan",
+    "Koordinasi supply sesuai jadwal"
+  ]
+}

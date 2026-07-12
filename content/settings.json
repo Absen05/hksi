@@ -1,0 +1,79 @@
+{
+  "site_name": "PT Hasta Karya Sejahtera Indonesia",
+  "short_name": "HKSI",
+  "tagline": "Solusi Tepat, Hasil Terbaik.",
+  "domain": "https://www.hksi.co.id",
+  "logo": "assets/img/logo/logo-horizontal.png",
+  "logo_white": "assets/img/logo/logo-white.png",
+  "logo_color": "assets/img/logo/logo-color.png",
+  "logo_icon": "assets/img/logo/logo-icon.png",
+  "copyright": "Â© 2026 PT Hasta Karya Sejahtera Indonesia. All rights reserved.",
+  "navigation_home": [
+    {
+      "label": "Tentang",
+      "url": "#about"
+    },
+    {
+      "label": "Layanan",
+      "url": "#services"
+    },
+    {
+      "label": "Portfolio",
+      "url": "#portfolio"
+    },
+    {
+      "label": "Legalitas",
+      "url": "#legality"
+    },
+    {
+      "label": "Kontak",
+      "url": "#contact"
+    }
+  ],
+  "navigation_project": [
+    {
+      "label": "Beranda",
+      "url": "index.html"
+    },
+    {
+      "label": "Layanan",
+      "url": "index.html#services"
+    },
+    {
+      "label": "Portfolio",
+      "url": "project.html"
+    },
+    {
+      "label": "Kontak",
+      "url": "index.html#contact"
+    }
+  ],
+  "footer_navigation_home": [
+    {
+      "label": "Layanan",
+      "url": "#services"
+    },
+    {
+      "label": "Portfolio",
+      "url": "project.html"
+    },
+    {
+      "label": "Kontak",
+      "url": "#contact"
+    }
+  ],
+  "footer_navigation_project": [
+    {
+      "label": "Beranda",
+      "url": "index.html"
+    },
+    {
+      "label": "Layanan",
+      "url": "index.html#services"
+    },
+    {
+      "label": "Kontak",
+      "url": "index.html#contact"
+    }
+  ]
+}

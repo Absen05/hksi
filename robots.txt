@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/private/
+Disallow: /assets/temp/
+Disallow: /backup/
+Disallow: /draft/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vscode/
+Disallow: /node_modules/
+Disallow: /admin/
+
+Sitemap: https://www.hksi.co.id/sitemap.xml

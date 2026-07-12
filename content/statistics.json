@@ -1,0 +1,25 @@
+{
+  "aria_label": "Statistik HKSI",
+  "items": [
+    {
+      "value": 3,
+      "suffix": "+",
+      "label": "Layanan Utama"
+    },
+    {
+      "value": 10,
+      "suffix": "+",
+      "label": "Project Support"
+    },
+    {
+      "value": 100,
+      "suffix": "%",
+      "label": "Komitmen Kualitas"
+    },
+    {
+      "value": 24,
+      "suffix": "+",
+      "label": "Jam Respons Awal"
+    }
+  ]
+}
