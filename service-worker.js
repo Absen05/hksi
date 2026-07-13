@@ -1,4 +1,4 @@
-const CACHE_NAME = "hksi-production-v3-json-content";
+const CACHE_NAME = "hksi-production-v4-legality-removed";
 
 const PRECACHE_URLS = [
   "./",
@@ -52,8 +52,7 @@ const PRECACHE_URLS = [
   "./content/gallery/survey-work.json",
   "./content/gallery/engineering-documentation.json",
   "./content/clients/section.json",
-  "./content/testimonials/section.json",
-  "./content/legality/section.json"
+  "./content/testimonials/section.json"
 ];
 
 self.addEventListener("install", (event) => {

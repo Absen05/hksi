@@ -14,8 +14,8 @@ backend:
   name: github
   repo: Absen05/hksi
   branch: main
-  base_url: https://decap-proxy.rifai5715.workers.dev
-  auth_endpoint: auth
+  # base_url: "https://your-oauth-provider.example.com"
+  # auth_endpoint: "auth"
 
 # Enables local testing with `npx decap-server` (safe to leave in; it is
 # only active when Decap is run on localhost).
@@ -293,15 +293,6 @@ collections:
             fields:
               - {label: "Quote", name: "quote", widget: "text"}
               - {label: "Author / Source", name: "author", widget: "string"}
-
-      - label: "Legality Section"
-        name: "legality"
-        file: "content/legality/section.json"
-        format: "json"
-        fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Title", name: "title", widget: "text"}
-          - {label: "Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "text"}}
 
       - label: "Call To Action (CTA)"
         name: "cta"

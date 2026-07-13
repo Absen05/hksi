@@ -38,8 +38,7 @@
       "content/gallery/engineering-documentation.json"
     ],
     clients: "content/clients/section.json",
-    testimonials: "content/testimonials/section.json",
-    legality: "content/legality/section.json"
+    testimonials: "content/testimonials/section.json"
   };
 
   let siteContent = {};
@@ -83,8 +82,7 @@
       gallerySection,
       gallery,
       clients,
-      testimonials,
-      legality
+      testimonials
     ] = await Promise.all([
       loadContentFile(contentPaths.settings),
       loadContentFile(contentPaths.seo),
@@ -104,8 +102,7 @@
       loadContentFile(contentPaths.gallerySection),
       Promise.all(contentPaths.gallery.map(loadContentFile)),
       loadContentFile(contentPaths.clients),
-      loadContentFile(contentPaths.testimonials),
-      loadContentFile(contentPaths.legality)
+      loadContentFile(contentPaths.testimonials)
     ]);
 
     return {
@@ -127,8 +124,7 @@
       gallerySection,
       gallery: gallery.sort((a, b) => a.order - b.order),
       clients,
-      testimonials,
-      legality
+      testimonials
     };
   }
 
@@ -429,18 +425,6 @@
                 <figcaption>${escapeHtml(item.author)}</figcaption>
               </figure>
             `).join("")}
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="legality" aria-labelledby="legality-title">
-        <div class="container grid grid--2">
-          <div class="section__copy reveal">
-            <p class="eyebrow">${escapeHtml(content.legality.eyebrow)}</p>
-            <h2 id="legality-title">${escapeHtml(content.legality.title)}</h2>
-          </div>
-          <div class="legal-panel reveal">
-            <ul class="check-list">${content.legality.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
           </div>
         </div>
       </section>

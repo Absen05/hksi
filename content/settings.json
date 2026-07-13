@@ -7,7 +7,7 @@
   "logo_white": "assets/img/logo/logo-white.png",
   "logo_color": "assets/img/logo/logo-color.png",
   "logo_icon": "assets/img/logo/logo-icon.png",
-  "copyright": "Â© 2026 PT Hasta Karya Sejahtera Indonesia. All rights reserved.",
+  "copyright": "© 2026 PT Hasta Karya Sejahtera Indonesia. All rights reserved.",
   "navigation_home": [
     {
       "label": "Tentang",
@@ -20,10 +20,6 @@
     {
       "label": "Portfolio",
       "url": "#portfolio"
-    },
-    {
-      "label": "Legalitas",
-      "url": "#legality"
     },
     {
       "label": "Kontak",
