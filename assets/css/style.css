@@ -1,14 +1,15 @@
 :root {
-  --color-gold: #d4af37;
-  --color-gold-dark: #a57f18;
-  --color-black: #1a1a1a;
-  --color-ink: #242424;
-  --color-muted: #686868;
-  --color-line: #e7e2d6;
-  --color-soft: #f7f5ef;
+  --color-primary: #f4740d;
+  --color-primary-dark: #c85807;
+  --color-primary-light: #ff9142;
+  --color-black: #1c222b;
+  --color-ink: #232830;
+  --color-muted: #656d7a;
+  --color-line: #e7e5e2;
+  --color-soft: #f6f7f9;
   --color-white: #ffffff;
-  --shadow-sm: 0 12px 32px rgba(26, 26, 26, 0.08);
-  --shadow-md: 0 24px 70px rgba(26, 26, 26, 0.14);
+  --shadow-sm: 0 12px 32px rgba(28, 34, 43, 0.08);
+  --shadow-md: 0 24px 70px rgba(28, 34, 43, 0.14);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -32,12 +33,52 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 400;
   color: var(--color-ink);
   background: var(--color-white);
   line-height: 1.65;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cegah kursor teks kedip (blinking caret) saat elemen UI diklik.
+   Judul, navigasi, tombol, label, dan badge bersifat dekoratif/interaktif,
+   bukan teks yang perlu diseleksi, sehingga caret disembunyikan di sana.
+   Paragraf/konten utama tetap bisa diseleksi & disalin seperti biasa. */
+h1,
+h2,
+h3,
+.eyebrow,
+.footer h2,
+.stat strong,
+.stat span,
+.advantage-card__index,
+.project-tag,
+.card-index {
+  cursor: default;
+  caret-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.nav__list,
+.brand,
+.button,
+.filter-button,
+.whatsapp-float,
+.back-to-top {
+  cursor: pointer;
+  caret-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--color-primary);
 }
 
 body.menu-open {
@@ -96,36 +137,42 @@ h1,
 h2,
 h3 {
   color: var(--color-black);
-  line-height: 1.05;
-  letter-spacing: 0;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 6.25rem);
+  font-size: clamp(2.5rem, 6vw, 5.25rem);
   max-width: 980px;
+  font-weight: 800;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 4.25rem);
+  font-size: clamp(1.9rem, 3.6vw, 3.4rem);
   max-width: 900px;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
 }
 
 p {
   color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--color-primary);
   outline-offset: 4px;
 }
 
 ::selection {
   color: var(--color-black);
-  background: var(--color-gold);
+  background: var(--color-primary);
 }
 
 .container {
@@ -254,7 +301,7 @@ p {
   bottom: 4px;
   width: 100%;
   height: 2px;
-  background: var(--color-gold);
+  background: var(--color-primary);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition);
@@ -303,7 +350,7 @@ p {
 }
 
 .eyebrow {
-  color: var(--color-gold-dark);
+  color: var(--color-primary-dark);
   font-size: 0.76rem;
   font-weight: 800;
   line-height: 1.2;
@@ -315,7 +362,7 @@ p {
 .hero .eyebrow,
 .page-hero .eyebrow,
 .cta .eyebrow {
-  color: var(--color-gold);
+  color: var(--color-primary);
 }
 
 .grid {
@@ -352,11 +399,11 @@ p {
 
 .button--primary {
   color: var(--color-black);
-  background: var(--color-gold);
+  background: var(--color-primary);
 }
 
 .button--primary:hover {
-  background: #e3bd47;
+  background: #ff8c33;
 }
 
 .button--ghost {
@@ -435,12 +482,12 @@ p {
 
 .statement-card,
 .feature-card,
-.quote-card,
+.advantage-card,
 .legal-panel {
   min-height: 100%;
   padding: clamp(28px, 4vw, 46px);
   background: var(--color-white);
-  border: 1px solid rgba(231, 226, 214, 0.9);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
@@ -452,7 +499,7 @@ p {
 
 .card-index,
 .project-tag {
-  color: var(--color-gold-dark);
+  color: var(--color-primary-dark);
   font-size: 0.78rem;
   font-weight: 850;
   letter-spacing: 0.12em;
@@ -478,8 +525,8 @@ p {
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: var(--color-gold);
-  box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.16);
+  background: var(--color-primary);
+  box-shadow: 0 0 0 5px rgba(244, 116, 13, 0.16);
 }
 
 .service-grid {
@@ -532,7 +579,7 @@ p {
   height: 7px;
   margin-right: 10px;
   border-radius: 50%;
-  background: var(--color-gold);
+  background: var(--color-primary);
   vertical-align: middle;
 }
 
@@ -582,7 +629,7 @@ p {
 }
 
 .stat strong {
-  color: var(--color-gold);
+  color: var(--color-primary);
   font-size: clamp(2.4rem, 5vw, 4.5rem);
   line-height: 1;
 }
@@ -594,7 +641,7 @@ p {
 
 .project-preview-grid,
 .gallery-grid,
-.quote-grid {
+.advantage-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
@@ -659,7 +706,7 @@ p {
 }
 
 .project-card__body span {
-  color: var(--color-gold-dark);
+  color: var(--color-primary-dark);
   font-size: 0.78rem;
   font-weight: 850;
   text-transform: uppercase;
@@ -683,21 +730,31 @@ p {
   box-shadow: var(--shadow-sm);
 }
 
-.quote-card {
+.advantage-card {
   display: grid;
-  gap: 24px;
+  gap: 14px;
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.quote-card blockquote {
-  color: var(--color-black);
-  font-size: 1.08rem;
+.advantage-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
 }
 
-.quote-card figcaption {
-  color: var(--color-gold-dark);
-  font-weight: 850;
+.advantage-card__index {
+  color: var(--color-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+}
+
+.advantage-card h3 {
+  font-size: 1.15rem;
+}
+
+.advantage-card p {
+  font-size: 0.98rem;
 }
 
 .legal-panel {
@@ -728,7 +785,7 @@ p {
 }
 
 .contact-list a:hover {
-  color: var(--color-gold-dark);
+  color: var(--color-primary-dark);
 }
 
 .map-shell {
@@ -785,13 +842,13 @@ p {
 .form-field select:focus,
 .form-field textarea:focus {
   outline: 0;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.18);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(244, 116, 13, 0.18);
 }
 
 .form-status {
   min-height: 24px;
-  color: var(--color-gold-dark);
+  color: var(--color-primary-dark);
   font-weight: 750;
 }
 
@@ -799,7 +856,7 @@ p {
   padding-block: clamp(76px, 10vw, 130px);
   color: var(--color-white);
   background:
-    linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.84)),
+    linear-gradient(135deg, rgba(28, 34, 43, 0.95), rgba(28, 34, 43, 0.84)),
     url("../img/pattern/pattern-engineering.png") center / 460px;
 }
 
@@ -843,7 +900,7 @@ p {
 }
 
 .footer a:hover {
-  color: var(--color-gold);
+  color: var(--color-primary);
 }
 
 .footer__bottom {
@@ -880,7 +937,7 @@ p {
   height: 42px;
   padding-inline: 14px;
   color: var(--color-black);
-  background: var(--color-gold);
+  background: var(--color-primary);
   opacity: 0;
   pointer-events: none;
   transform: translateY(8px);
@@ -948,7 +1005,7 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(26, 26, 26, 0.94), rgba(26, 26, 26, 0.72)),
+    linear-gradient(90deg, rgba(28, 34, 43, 0.94), rgba(28, 34, 43, 0.72)),
     url("../img/hero/hero-main.png") center / cover;
 }
 
@@ -984,8 +1041,8 @@ p {
 
 .filter-button:hover,
 .filter-button.is-active {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .project-list {
@@ -1022,7 +1079,7 @@ p {
 }
 
 .project-meta dt {
-  color: var(--color-gold-dark);
+  color: var(--color-primary-dark);
   font-size: 0.76rem;
   font-weight: 850;
   text-transform: uppercase;
@@ -1041,7 +1098,7 @@ p {
   padding-block: 120px;
   color: var(--color-white);
   background:
-    linear-gradient(135deg, rgba(26, 26, 26, 0.92), rgba(26, 26, 26, 0.86)),
+    linear-gradient(135deg, rgba(28, 34, 43, 0.92), rgba(28, 34, 43, 0.86)),
     url("../img/hero/hero-main.png") center / cover;
 }
 
@@ -1133,7 +1190,7 @@ p {
   .service-grid,
   .feature-grid,
   .project-preview-grid,
-  .quote-grid,
+  .advantage-grid,
   .sector-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1170,7 +1227,7 @@ p {
   .service-grid,
   .feature-grid,
   .project-preview-grid,
-  .quote-grid,
+  .advantage-grid,
   .sector-grid,
   .gallery-grid,
   .stats__grid,
@@ -1186,7 +1243,7 @@ p {
   .contact-form,
   .statement-card,
   .feature-card,
-  .quote-card,
+  .advantage-card,
   .legal-panel {
     border-radius: 12px;
   }

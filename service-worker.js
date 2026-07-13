@@ -52,7 +52,7 @@ const PRECACHE_URLS = [
   "./content/gallery/survey-work.json",
   "./content/gallery/engineering-documentation.json",
   "./content/clients/section.json",
-  "./content/testimonials/section.json"
+  "./content/advantages/section.json"
 ];
 
 self.addEventListener("install", (event) => {

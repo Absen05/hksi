@@ -64,7 +64,7 @@ the file tree only, ready for the next deployment step.
 │   │   ├── survey-work.json
 │   │   └── engineering-documentation.json
 │   ├── clients/section.json      # Client sector list
-│   ├── testimonials/section.json # Trust / quote cards
+│   ├── advantages/section.json   # Keunggulan Kami cards
 │   └── legality/section.json     # Legality checklist
 └── assets/
     ├── css/
@@ -109,7 +109,7 @@ the file tree only, ready for the next deployment step.
 - One `pages` collection with 17 **file** entries — one per singleton
   JSON file (`settings`, `seo`, `hero`, `about`, `vision`, `mission`,
   `why`, `statistics`, `contact`, `services_section`, `projects_section`,
-  `gallery_section`, `clients`, `testimonials`, `legality`, `cta`,
+  `gallery_section`, `clients`, `advantages`, `cta`,
   `errors`) — every field in each JSON file is mapped, including nested
   objects (hero buttons, contact form, SEO per-page blocks, error page
   buttons) and lists.

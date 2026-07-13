@@ -38,7 +38,7 @@
       "content/gallery/engineering-documentation.json"
     ],
     clients: "content/clients/section.json",
-    testimonials: "content/testimonials/section.json"
+    advantages: "content/advantages/section.json"
   };
 
   let siteContent = {};
@@ -82,7 +82,7 @@
       gallerySection,
       gallery,
       clients,
-      testimonials
+      advantages
     ] = await Promise.all([
       loadContentFile(contentPaths.settings),
       loadContentFile(contentPaths.seo),
@@ -102,7 +102,7 @@
       loadContentFile(contentPaths.gallerySection),
       Promise.all(contentPaths.gallery.map(loadContentFile)),
       loadContentFile(contentPaths.clients),
-      loadContentFile(contentPaths.testimonials)
+      loadContentFile(contentPaths.advantages)
     ]);
 
     return {
@@ -124,7 +124,7 @@
       gallerySection,
       gallery: gallery.sort((a, b) => a.order - b.order),
       clients,
-      testimonials
+      advantages
     };
   }
 
@@ -412,18 +412,19 @@
         </div>
       </section>
 
-      <section class="section section--muted" id="testimonials" aria-labelledby="trust-title">
+      <section class="section section--muted" id="advantages" aria-labelledby="advantages-title">
         <div class="container">
           <div class="section__header reveal">
-            <p class="eyebrow">${escapeHtml(content.testimonials.eyebrow)}</p>
-            <h2 id="trust-title">${escapeHtml(content.testimonials.title)}</h2>
+            <p class="eyebrow">${escapeHtml(content.advantages.eyebrow)}</p>
+            <h2 id="advantages-title">${escapeHtml(content.advantages.title)}</h2>
           </div>
-          <div class="quote-grid">
-            ${content.testimonials.items.map((item) => `
-              <figure class="quote-card reveal">
-                <blockquote>${escapeHtml(item.quote)}</blockquote>
-                <figcaption>${escapeHtml(item.author)}</figcaption>
-              </figure>
+          <div class="advantage-grid">
+            ${content.advantages.items.map((item, index) => `
+              <div class="advantage-card reveal">
+                <span class="advantage-card__index">${String(index + 1).padStart(2, "0")}</span>
+                <h3>${escapeHtml(item.title)}</h3>
+                <p>${escapeHtml(item.description)}</p>
+              </div>
             `).join("")}
           </div>
         </div>

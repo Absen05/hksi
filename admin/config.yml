@@ -280,19 +280,19 @@ collections:
               - {label: "Logo", name: "logo", widget: "image", required: false}
               - {label: "URL", name: "url", widget: "string", required: false}
 
-      - label: "Testimonials"
-        name: "testimonials"
-        file: "content/testimonials/section.json"
+      - label: "Keunggulan Kami"
+        name: "advantages"
+        file: "content/advantages/section.json"
         format: "json"
         fields:
           - {label: "Eyebrow", name: "eyebrow", widget: "string"}
           - {label: "Title", name: "title", widget: "text"}
-          - label: "Quotes"
+          - label: "Daftar Keunggulan"
             name: "items"
             widget: "list"
             fields:
-              - {label: "Quote", name: "quote", widget: "text"}
-              - {label: "Author / Source", name: "author", widget: "string"}
+              - {label: "Judul", name: "title", widget: "string"}
+              - {label: "Deskripsi", name: "description", widget: "text"}
 
       - label: "Call To Action (CTA)"
         name: "cta"
