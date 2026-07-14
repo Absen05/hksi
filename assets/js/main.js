@@ -12,6 +12,8 @@
     about: "content/about.json",
     vision: "content/vision.json",
     mission: "content/mission.json",
+    values: "content/values.json",
+    team: "content/team.json",
     why: "content/why.json",
     statistics: "content/statistics.json",
     contact: "content/contact.json",
@@ -70,6 +72,8 @@
       about,
       vision,
       mission,
+      values,
+      team,
       why,
       statistics,
       contact,
@@ -90,6 +94,8 @@
       loadContentFile(contentPaths.about),
       loadContentFile(contentPaths.vision),
       loadContentFile(contentPaths.mission),
+      loadContentFile(contentPaths.values),
+      loadContentFile(contentPaths.team),
       loadContentFile(contentPaths.why),
       loadContentFile(contentPaths.statistics),
       loadContentFile(contentPaths.contact),
@@ -112,6 +118,8 @@
       about,
       vision,
       mission,
+      values,
+      team,
       why,
       statistics,
       contact,
@@ -310,7 +318,25 @@
         </div>
       </section>
 
-      <section class="section" id="services" aria-labelledby="services-title">
+      <section class="section" aria-labelledby="values-title">
+        <div class="container">
+          <div class="section__header reveal">
+            <p class="eyebrow">${escapeHtml(content.values.eyebrow)}</p>
+            <h2 id="values-title">${escapeHtml(content.values.title)}</h2>
+          </div>
+          <div class="value-grid">
+            ${content.values.items.map((item) => `
+              <article class="value-card reveal">
+                <span class="value-card__letter">${escapeHtml(item.letter)}</span>
+                <h3>${escapeHtml(item.word)}</h3>
+                <p>${escapeHtml(item.text)}</p>
+              </article>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--muted" id="services" aria-labelledby="services-title">
         <div class="container">
           <div class="section__header reveal">
             <p class="eyebrow">${escapeHtml(content.servicesSection.eyebrow)}</p>
@@ -422,7 +448,24 @@
         </div>
       </section>
 
-      <section class="section section--muted" id="testimonials" aria-labelledby="trust-title">
+      <section class="section section--muted" aria-labelledby="team-title">
+        <div class="container">
+          <div class="section__header reveal">
+            <p class="eyebrow">${escapeHtml(content.team.eyebrow)}</p>
+            <h2 id="team-title">${escapeHtml(content.team.title)}</h2>
+          </div>
+          <div class="team-grid">
+            ${content.team.items.map((item) => `
+              <article class="team-card reveal">
+                <h3>${escapeHtml(item.name)}</h3>
+                <p>${escapeHtml(item.role)}</p>
+              </article>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="testimonials" aria-labelledby="trust-title">
         <div class="container">
           <div class="section__header reveal">
             <p class="eyebrow">${escapeHtml(content.testimonials.eyebrow)}</p>

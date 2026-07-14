@@ -1,4 +1,4 @@
-const CACHE_NAME = "hksi-production-v5-brand-gallery-update";
+const CACHE_NAME = "hksi-production-v6-values-team-sections";
 
 const PRECACHE_URLS = [
   "./",
@@ -32,6 +32,8 @@ const PRECACHE_URLS = [
   "./content/about.json",
   "./content/vision.json",
   "./content/mission.json",
+  "./content/values.json",
+  "./content/team.json",
   "./content/why.json",
   "./content/statistics.json",
   "./content/services.json",

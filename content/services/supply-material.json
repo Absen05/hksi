@@ -1,12 +1,12 @@
 {
   "order": 1,
   "title": "Supply Material",
-  "description": "Penyediaan material pendukung konstruksi untuk kebutuhan lapangan, pekerjaan sipil, dan operasional proyek.",
+  "description": "Menyediakan berbagai kebutuhan material konstruksi dan proyek, seperti agregat, pasir, batu split, tanah urug, serta material pendukung lainnya dengan kualitas terbaik dan pengiriman tepat waktu.",
   "image": "assets/img/services/service-material.png",
   "image_alt": "Ilustrasi supply material konstruksi",
   "features": [
-    "Pengadaan material proyek",
-    "Support kebutuhan lapangan",
-    "Koordinasi supply sesuai jadwal"
+    "Agregat, pasir, dan batu split",
+    "Tanah urug dan material pendukung",
+    "Pengiriman tepat waktu ke lokasi proyek"
   ]
 }

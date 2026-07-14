@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Nilai Perusahaan",
+  "title": "H.K.S.I — nilai yang menjadi dasar setiap pekerjaan kami.",
+  "items": [
+    {
+      "letter": "H",
+      "word": "Harmoni",
+      "text": "Membangun kerja sama yang selaras antar tim, mitra, dan klien di setiap tahap proyek."
+    },
+    {
+      "letter": "K",
+      "word": "Kualitas",
+      "text": "Menjaga standar mutu material, pengujian, dan hasil pengukuran sesuai spesifikasi teknis yang berlaku."
+    },
+    {
+      "letter": "S",
+      "word": "Sinergi",
+      "text": "Mengintegrasikan supply material, laboratorium, dan pengukuran menjadi satu dukungan kerja yang saling melengkapi."
+    },
+    {
+      "letter": "I",
+      "word": "Integritas",
+      "text": "Menjalankan setiap pekerjaan dengan jujur, transparan, dan bertanggung jawab kepada klien."
+    }
+  ]
+}

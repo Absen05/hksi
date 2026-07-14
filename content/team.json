@@ -1,0 +1,22 @@
+{
+  "eyebrow": "Struktur Organisasi",
+  "title": "Tim manajemen PT Hasta Karya Sejahtera Indonesia.",
+  "items": [
+    {
+      "name": "Urip Widodo",
+      "role": "Komisaris Utama"
+    },
+    {
+      "name": "Tatang Darmuji",
+      "role": "Direktur Utama"
+    },
+    {
+      "name": "Belly Pranata",
+      "role": "Direktur"
+    },
+    {
+      "name": "Pauri D. Samal",
+      "role": "Business Development"
+    }
+  ]
+}

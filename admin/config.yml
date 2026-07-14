@@ -163,6 +163,35 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
 
+      - label: "Nilai Perusahaan (H.K.S.I)"
+        name: "values"
+        file: "content/values.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Huruf", name: "letter", widget: "string", hint: "Satu huruf: H, K, S, atau I"}
+              - {label: "Kata", name: "word", widget: "string"}
+              - {label: "Penjelasan", name: "text", widget: "text"}
+
+      - label: "Struktur Organisasi"
+        name: "team"
+        file: "content/team.json"
+        format: "json"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Title", name: "title", widget: "text"}
+          - label: "Anggota"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Nama", name: "name", widget: "string"}
+              - {label: "Jabatan", name: "role", widget: "string"}
+
       - label: "Why Choose Us"
         name: "why"
         file: "content/why.json"
