@@ -1,4 +1,4 @@
-const CACHE_NAME = "hksi-production-v9-gallery-subfolders";
+const CACHE_NAME = "hksi-production-v10-fix-precache-bug";
 
 const PRECACHE_URLS = [
   "./",
@@ -22,10 +22,6 @@ const PRECACHE_URLS = [
   "./assets/img/projects/project-material-supply.png",
   "./assets/img/projects/project-survey-measurement.png",
   "./assets/img/projects/project-field-documentation.png",
-  "./assets/img/gallery/field-laboratory.png",
-  "./assets/img/gallery/material-support.png",
-  "./assets/img/gallery/survey-work.png",
-  "./assets/img/gallery/field-documentation.png",
   "./content/settings.json",
   "./content/seo.json",
   "./content/hero.json",

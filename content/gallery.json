@@ -22,57 +22,18 @@
   ],
   "photos_supply": [
     {
-      "image": "assets/img/gallery/supply/supply-1.jpeg",
-      "alt": "Dokumentasi Supply Material 1 HKSI",
-      "caption": "Dokumentasi Supply Material 1"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-2.jpeg",
-      "alt": "Dokumentasi Supply Material 2 HKSI",
-      "caption": "Dokumentasi Supply Material 2"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-3.jpeg",
-      "alt": "Dokumentasi Supply Material 3 HKSI",
-      "caption": "Dokumentasi Supply Material 3"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-4.jpeg",
-      "alt": "Dokumentasi Supply Material 4 HKSI",
-      "caption": "Dokumentasi Supply Material 4"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-5.jpeg",
-      "alt": "Dokumentasi Supply Material 5 HKSI",
-      "caption": "Dokumentasi Supply Material 5"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-6.jpeg",
-      "alt": "Dokumentasi Supply Material 6 HKSI",
-      "caption": "Dokumentasi Supply Material 6"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-7.jpeg",
-      "alt": "Dokumentasi Supply Material 7 HKSI",
-      "caption": "Dokumentasi Supply Material 7"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-8.jpeg",
-      "alt": "Dokumentasi Supply Material 8 HKSI",
-      "caption": "Dokumentasi Supply Material 8"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-9.jpeg",
-      "alt": "Dokumentasi Supply Material 9 HKSI",
-      "caption": "Dokumentasi Supply Material 9"
-    },
-    {
-      "image": "assets/img/gallery/supply/supply-10.jpeg",
-      "alt": "Dokumentasi Supply Material 10 HKSI",
-      "caption": "Dokumentasi Supply Material 10"
+      "image": "assets/img/gallery/supply/supply-1.png",
+      "alt": "Dukungan material proyek HKSI",
+      "caption": "Dukungan material proyek"
     }
   ],
-  "photos_laboratory": [],
+  "photos_laboratory": [
+    {
+      "image": "assets/img/gallery/laboratory/laboratory-1.png",
+      "alt": "Aktivitas laboratorium lapangan HKSI",
+      "caption": "Aktivitas laboratorium lapangan"
+    }
+  ],
   "photos_survey": [
     {
       "image": "assets/img/gallery/survey/survey-1.png",
@@ -83,16 +44,6 @@
       "image": "assets/img/gallery/survey/survey-2.png",
       "alt": "Dokumentasi teknis lapangan HKSI",
       "caption": "Dokumentasi teknis lapangan"
-    },
-    {
-      "image": "assets/img/gallery/survey/survey-3.png",
-      "alt": "Dokumentasi Survey & Pengukuran 3 HKSI",
-      "caption": "Dokumentasi Survey & Pengukuran 3"
-    },
-    {
-      "image": "assets/img/gallery/survey/survey-4.png",
-      "alt": "Dokumentasi Survey & Pengukuran 4 HKSI",
-      "caption": "Dokumentasi Survey & Pengukuran 4"
     }
   ]
 }
