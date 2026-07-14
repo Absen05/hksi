@@ -1,12 +1,13 @@
 {
   "order": 3,
   "title": "Survey & Pengukuran",
-  "description": "Menyediakan layanan survei, pemetaan, staking out, pengukuran topografi, serta pekerjaan geospasial lainnya menggunakan teknologi dan peralatan modern.",
+  "description": "Menyediakan layanan survei, pemetaan, staking out, pengukuran topografi, serta survey dan pengukuran (drafting) material di atas tongkang sebelum dibongkar oleh klien, menggunakan teknologi dan peralatan modern.",
   "image": "assets/img/services/service-survey.png",
   "image_alt": "Ilustrasi survey dan pengukuran teknik",
   "features": [
     "Survei dan pemetaan lapangan",
     "Staking out dan pengukuran topografi",
+    "Survey dan pengukuran material di atas tongkang (contoh: batu split) sebelum dibongkar klien",
     "Pekerjaan geospasial dengan peralatan modern"
   ]
 }

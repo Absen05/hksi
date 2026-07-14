@@ -206,20 +206,6 @@ collections:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Text", name: "text", widget: "text"}
 
-      - label: "Statistics"
-        name: "statistics"
-        file: "content/statistics.json"
-        format: "json"
-        fields:
-          - {label: "ARIA Label", name: "aria_label", widget: "string"}
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Value", name: "value", widget: "number", value_type: "int"}
-              - {label: "Suffix", name: "suffix", widget: "string"}
-              - {label: "Label", name: "label", widget: "string"}
-
       - label: "Contact"
         name: "contact"
         file: "content/contact.json"
@@ -304,25 +290,25 @@ collections:
           - label: "Foto — Supply Material"
             name: "photos_supply"
             widget: "list"
-            hint: "Klik 'Add' untuk tambah foto. Urutan tampil = urutan di sini (bisa di-drag). Kategori otomatis 'Supply Material', tidak perlu dipilih lagi."
+            hint: "Klik 'Add' untuk tambah foto. Urutan tampil = urutan di sini (bisa di-drag). Kategori otomatis 'Supply Material', tidak perlu dipilih lagi. Foto tersimpan otomatis di assets/img/gallery/supply/."
             fields:
-              - {label: "Foto", name: "image", widget: "image"}
+              - {label: "Foto", name: "image", widget: "image", media_folder: "/assets/img/gallery/supply", public_folder: "/assets/img/gallery/supply"}
               - {label: "Alt Text", name: "alt", widget: "string"}
               - {label: "Caption", name: "caption", widget: "string"}
           - label: "Foto — Laboratorium"
             name: "photos_laboratory"
             widget: "list"
-            hint: "Klik 'Add' untuk tambah foto. Urutan tampil = urutan di sini (bisa di-drag). Kategori otomatis 'Laboratorium', tidak perlu dipilih lagi."
+            hint: "Klik 'Add' untuk tambah foto. Urutan tampil = urutan di sini (bisa di-drag). Kategori otomatis 'Laboratorium', tidak perlu dipilih lagi. Foto tersimpan otomatis di assets/img/gallery/laboratory/."
             fields:
-              - {label: "Foto", name: "image", widget: "image"}
+              - {label: "Foto", name: "image", widget: "image", media_folder: "/assets/img/gallery/laboratory", public_folder: "/assets/img/gallery/laboratory"}
               - {label: "Alt Text", name: "alt", widget: "string"}
               - {label: "Caption", name: "caption", widget: "string"}
           - label: "Foto — Survey & Pengukuran"
             name: "photos_survey"
             widget: "list"
-            hint: "Klik 'Add' untuk tambah foto. Urutan tampil = urutan di sini (bisa di-drag). Kategori otomatis 'Survey & Pengukuran', tidak perlu dipilih lagi."
+            hint: "Klik 'Add' untuk tambah foto. Urutan tampil = urutan di sini (bisa di-drag). Kategori otomatis 'Survey & Pengukuran', tidak perlu dipilih lagi. Foto tersimpan otomatis di assets/img/gallery/survey/."
             fields:
-              - {label: "Foto", name: "image", widget: "image"}
+              - {label: "Foto", name: "image", widget: "image", media_folder: "/assets/img/gallery/survey", public_folder: "/assets/img/gallery/survey"}
               - {label: "Alt Text", name: "alt", widget: "string"}
               - {label: "Caption", name: "caption", widget: "string"}
 

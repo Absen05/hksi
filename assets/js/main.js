@@ -15,7 +15,6 @@
     values: "content/values.json",
     team: "content/team.json",
     why: "content/why.json",
-    statistics: "content/statistics.json",
     contact: "content/contact.json",
     cta: "content/cta.json",
     errors: "content/errors.json",
@@ -67,7 +66,6 @@
       values,
       team,
       why,
-      statistics,
       contact,
       cta,
       errors,
@@ -86,7 +84,6 @@
       loadContentFile(contentPaths.values),
       loadContentFile(contentPaths.team),
       loadContentFile(contentPaths.why),
-      loadContentFile(contentPaths.statistics),
       loadContentFile(contentPaths.contact),
       loadContentFile(contentPaths.cta),
       loadContentFile(contentPaths.errors),
@@ -121,7 +118,6 @@
       values,
       team,
       why,
-      statistics,
       contact,
       cta,
       errors,
@@ -369,17 +365,6 @@
               </article>
             `).join("")}
           </div>
-        </div>
-      </section>
-
-      <section class="stats" aria-label="${attr(content.statistics.aria_label)}">
-        <div class="container stats__grid">
-          ${content.statistics.items.map((item) => `
-            <div class="stat reveal">
-              <strong data-counter="${attr(item.value)}" data-suffix="${attr(item.suffix)}">0</strong>
-              <span>${escapeHtml(item.label)}</span>
-            </div>
-          `).join("")}
         </div>
       </section>
 

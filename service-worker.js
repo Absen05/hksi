@@ -1,4 +1,4 @@
-const CACHE_NAME = "hksi-production-v7-gallery-restructure";
+const CACHE_NAME = "hksi-production-v9-gallery-subfolders";
 
 const PRECACHE_URLS = [
   "./",
@@ -35,7 +35,6 @@ const PRECACHE_URLS = [
   "./content/values.json",
   "./content/team.json",
   "./content/why.json",
-  "./content/statistics.json",
   "./content/services.json",
   "./content/projects.json",
   "./content/gallery.json",
