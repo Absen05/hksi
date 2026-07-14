@@ -1,4 +1,23 @@
 {
   "eyebrow": "Gallery",
-  "title": "Visual pekerjaan lapangan HKSI."
+  "title": "Visual pekerjaan lapangan HKSI.",
+  "filter_label": "Filter dokumentasi berdasarkan layanan",
+  "filters": [
+    {
+      "label": "Semua",
+      "value": "all"
+    },
+    {
+      "label": "Supply Material",
+      "value": "supply"
+    },
+    {
+      "label": "Laboratorium",
+      "value": "laboratory"
+    },
+    {
+      "label": "Survey & Pengukuran",
+      "value": "survey"
+    }
+  ]
 }

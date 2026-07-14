@@ -35,10 +35,10 @@
       "content/gallery/field-laboratory.json",
       "content/gallery/material-support.json",
       "content/gallery/survey-work.json",
-      "content/gallery/engineering-documentation.json"
+      "content/gallery/field-documentation.json"
     ],
     clients: "content/clients/section.json",
-    advantages: "content/advantages/section.json"
+    testimonials: "content/testimonials/section.json"
   };
 
   let siteContent = {};
@@ -82,7 +82,7 @@
       gallerySection,
       gallery,
       clients,
-      advantages
+      testimonials
     ] = await Promise.all([
       loadContentFile(contentPaths.settings),
       loadContentFile(contentPaths.seo),
@@ -102,7 +102,7 @@
       loadContentFile(contentPaths.gallerySection),
       Promise.all(contentPaths.gallery.map(loadContentFile)),
       loadContentFile(contentPaths.clients),
-      loadContentFile(contentPaths.advantages)
+      loadContentFile(contentPaths.testimonials)
     ]);
 
     return {
@@ -124,7 +124,7 @@
       gallerySection,
       gallery: gallery.sort((a, b) => a.order - b.order),
       clients,
-      advantages
+      testimonials
     };
   }
 
@@ -189,6 +189,7 @@
           email: schema.email,
           address: {
             "@type": "PostalAddress",
+            streetAddress: schema.street_address,
             addressLocality: schema.locality,
             addressRegion: schema.region,
             addressCountry: schema.country
@@ -386,16 +387,25 @@
 
       <section class="section section--muted" aria-labelledby="gallery-title">
         <div class="container">
-          <div class="section__header reveal">
-            <p class="eyebrow">${escapeHtml(content.gallerySection.eyebrow)}</p>
-            <h2 id="gallery-title">${escapeHtml(content.gallerySection.title)}</h2>
+          <div class="section__header section__header--split reveal">
+            <div>
+              <p class="eyebrow">${escapeHtml(content.gallerySection.eyebrow)}</p>
+              <h2 id="gallery-title">${escapeHtml(content.gallerySection.title)}</h2>
+            </div>
+            <div class="filter-group" role="group" aria-label="${attr(content.gallerySection.filter_label)}">
+              ${content.gallerySection.filters.map((filter, index) => `<button class="filter-button${index === 0 ? " is-active" : ""}" type="button" data-filter="${attr(filter.value)}">${escapeHtml(filter.label)}</button>`).join("")}
+            </div>
           </div>
-          <div class="gallery-grid">
-            ${content.gallery.map((item) => `
-              <button class="gallery-item reveal" type="button" data-lightbox="${attr(item.image)}" data-caption="${attr(item.caption)}">
+          <div class="gallery-grid" data-filter-list>
+            ${content.gallery.map((item) => {
+              const categoryLabel = (content.gallerySection.filters.find((filter) => filter.value === item.category) || {}).label || "";
+              return `
+              <button class="gallery-item reveal" type="button" data-category="${attr(item.category)}" data-lightbox="${attr(item.image)}" data-caption="${attr(item.caption)}">
                 <img src="${attr(item.image)}" width="941" height="1672" alt="${attr(item.alt)}" loading="lazy">
+                ${categoryLabel ? `<span class="gallery-item__tag">${escapeHtml(categoryLabel)}</span>` : ""}
               </button>
-            `).join("")}
+            `;
+            }).join("")}
           </div>
         </div>
       </section>
@@ -412,19 +422,18 @@
         </div>
       </section>
 
-      <section class="section section--muted" id="advantages" aria-labelledby="advantages-title">
+      <section class="section section--muted" id="testimonials" aria-labelledby="trust-title">
         <div class="container">
           <div class="section__header reveal">
-            <p class="eyebrow">${escapeHtml(content.advantages.eyebrow)}</p>
-            <h2 id="advantages-title">${escapeHtml(content.advantages.title)}</h2>
+            <p class="eyebrow">${escapeHtml(content.testimonials.eyebrow)}</p>
+            <h2 id="trust-title">${escapeHtml(content.testimonials.title)}</h2>
           </div>
-          <div class="advantage-grid">
-            ${content.advantages.items.map((item, index) => `
-              <div class="advantage-card reveal">
-                <span class="advantage-card__index">${String(index + 1).padStart(2, "0")}</span>
-                <h3>${escapeHtml(item.title)}</h3>
-                <p>${escapeHtml(item.description)}</p>
-              </div>
+          <div class="quote-grid">
+            ${content.testimonials.items.map((item) => `
+              <figure class="quote-card reveal">
+                <blockquote>${escapeHtml(item.quote)}</blockquote>
+                <figcaption>${escapeHtml(item.author)}</figcaption>
+              </figure>
             `).join("")}
           </div>
         </div>
@@ -710,7 +719,7 @@
     });
   }
 
-  function initProjectFilter() {
+  function initFilters() {
     const list = qs("[data-filter-list]");
     const buttons = qsa("[data-filter]");
     if (!list || !buttons.length) return;
@@ -800,7 +809,7 @@
     initReveal();
     initCounters();
     initLightbox();
-    initProjectFilter();
+    initFilters(); // shared by Portfolio filter (project.html) and Gallery filter (index.html)
     initContactForm();
     initWhatsAppLinks();
     initBackToTop();

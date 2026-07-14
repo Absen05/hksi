@@ -105,6 +105,7 @@ collections:
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Telephone", name: "telephone", widget: "string"}
               - {label: "Email", name: "email", widget: "string"}
+              - {label: "Street Address", name: "street_address", widget: "string"}
               - {label: "Locality", name: "locality", widget: "string"}
               - {label: "Region", name: "region", widget: "string"}
               - {label: "Country Code", name: "country", widget: "string"}
@@ -264,6 +265,13 @@ collections:
         fields:
           - {label: "Eyebrow", name: "eyebrow", widget: "string"}
           - {label: "Title", name: "title", widget: "text"}
+          - {label: "Filter Group ARIA Label", name: "filter_label", widget: "string"}
+          - label: "Filter Buttons"
+            name: "filters"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Value", name: "value", widget: "string", hint: "Gunakan: all, supply, laboratory, atau survey"}
 
       - label: "Clients / Sectors"
         name: "clients"
@@ -280,19 +288,19 @@ collections:
               - {label: "Logo", name: "logo", widget: "image", required: false}
               - {label: "URL", name: "url", widget: "string", required: false}
 
-      - label: "Keunggulan Kami"
-        name: "advantages"
-        file: "content/advantages/section.json"
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "content/testimonials/section.json"
         format: "json"
         fields:
           - {label: "Eyebrow", name: "eyebrow", widget: "string"}
           - {label: "Title", name: "title", widget: "text"}
-          - label: "Daftar Keunggulan"
+          - label: "Quotes"
             name: "items"
             widget: "list"
             fields:
-              - {label: "Judul", name: "title", widget: "string"}
-              - {label: "Deskripsi", name: "description", widget: "text"}
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Author / Source", name: "author", widget: "string"}
 
       - label: "Call To Action (CTA)"
         name: "cta"
@@ -396,10 +404,11 @@ collections:
     extension: "json"
     format: "json"
     slug: "{{slug}}"
-    summary: "{{order}} — {{caption}}"
-    sortable_fields: ["order"]
+    summary: "{{order}} — {{caption}} ({{category}})"
+    sortable_fields: ["order", "category"]
     fields:
       - {label: "Order", name: "order", widget: "number", value_type: "int"}
+      - {label: "Kategori Layanan", name: "category", widget: "select", options: ["laboratory", "supply", "survey"], hint: "Menentukan badge label & filter yang tampil di website"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Alt Text", name: "alt", widget: "string"}
       - {label: "Caption", name: "caption", widget: "string"}

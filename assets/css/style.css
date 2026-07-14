@@ -1,15 +1,17 @@
 :root {
-  --color-primary: #f4740d;
-  --color-primary-dark: #c85807;
-  --color-primary-light: #ff9142;
-  --color-black: #1c222b;
-  --color-ink: #232830;
-  --color-muted: #656d7a;
-  --color-line: #e7e5e2;
-  --color-soft: #f6f7f9;
+  /* Brand palette — sampled directly from the official HKSI logo
+     (orange #f37135, dark navy #2b323a) in the company profile. */
+  --color-primary: #f37135;
+  --color-primary-dark: #da4e0d;
+  --color-primary-light: #f69467;
+  --color-black: #2b323a;
+  --color-ink: #2c3542;
+  --color-muted: #64707c;
+  --color-line: #e2e7ee;
+  --color-soft: #f4f6fa;
   --color-white: #ffffff;
-  --shadow-sm: 0 12px 32px rgba(28, 34, 43, 0.08);
-  --shadow-md: 0 24px 70px rgba(28, 34, 43, 0.14);
+  --shadow-sm: 0 12px 32px rgba(43, 50, 58, 0.08);
+  --shadow-md: 0 24px 70px rgba(43, 50, 58, 0.14);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -33,52 +35,12 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
-  font-weight: 400;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--color-ink);
   background: var(--color-white);
   line-height: 1.65;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Cegah kursor teks kedip (blinking caret) saat elemen UI diklik.
-   Judul, navigasi, tombol, label, dan badge bersifat dekoratif/interaktif,
-   bukan teks yang perlu diseleksi, sehingga caret disembunyikan di sana.
-   Paragraf/konten utama tetap bisa diseleksi & disalin seperti biasa. */
-h1,
-h2,
-h3,
-.eyebrow,
-.footer h2,
-.stat strong,
-.stat span,
-.advantage-card__index,
-.project-tag,
-.card-index {
-  cursor: default;
-  caret-color: transparent;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-.nav__list,
-.brand,
-.button,
-.filter-button,
-.whatsapp-float,
-.back-to-top {
-  cursor: pointer;
-  caret-color: transparent;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-input,
-textarea,
-select {
-  caret-color: var(--color-primary);
 }
 
 body.menu-open {
@@ -137,32 +99,26 @@ h1,
 h2,
 h3 {
   color: var(--color-black);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
+  line-height: 1.05;
+  letter-spacing: 0;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 5.25rem);
+  font-size: clamp(3rem, 7vw, 6.25rem);
   max-width: 980px;
-  font-weight: 800;
 }
 
 h2 {
-  font-size: clamp(1.9rem, 3.6vw, 3.4rem);
+  font-size: clamp(2rem, 4vw, 4.25rem);
   max-width: 900px;
 }
 
 h3 {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 700;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
 }
 
 p {
   color: var(--color-muted);
-  font-size: 1rem;
-  line-height: 1.7;
 }
 
 :focus-visible {
@@ -403,7 +359,7 @@ p {
 }
 
 .button--primary:hover {
-  background: #ff8c33;
+  background: var(--color-primary-light);
 }
 
 .button--ghost {
@@ -482,12 +438,12 @@ p {
 
 .statement-card,
 .feature-card,
-.advantage-card,
+.quote-card,
 .legal-panel {
   min-height: 100%;
   padding: clamp(28px, 4vw, 46px);
   background: var(--color-white);
-  border: 1px solid var(--color-line);
+  border: 1px solid rgba(231, 226, 214, 0.9);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
@@ -526,7 +482,7 @@ p {
   height: 10px;
   border-radius: 999px;
   background: var(--color-primary);
-  box-shadow: 0 0 0 5px rgba(244, 116, 13, 0.16);
+  box-shadow: 0 0 0 5px rgba(243, 113, 53, 0.16);
 }
 
 .service-grid {
@@ -641,7 +597,7 @@ p {
 
 .project-preview-grid,
 .gallery-grid,
-.advantage-grid {
+.quote-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
@@ -682,6 +638,21 @@ p {
 .gallery-item {
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-md);
+}
+
+.gallery-item__tag {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 1;
+  padding: 6px 14px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-sm);
 }
 
 .project-card__image img,
@@ -730,31 +701,21 @@ p {
   box-shadow: var(--shadow-sm);
 }
 
-.advantage-card {
+.quote-card {
   display: grid;
-  gap: 14px;
-  transition: transform var(--transition), box-shadow var(--transition);
+  gap: 24px;
 }
 
-.advantage-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+.quote-card blockquote {
+  color: var(--color-black);
+  font-size: 1.08rem;
 }
 
-.advantage-card__index {
-  color: var(--color-primary);
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 800;
+.quote-card figcaption {
+  color: var(--color-primary-dark);
+  font-weight: 850;
   letter-spacing: 0.08em;
-}
-
-.advantage-card h3 {
-  font-size: 1.15rem;
-}
-
-.advantage-card p {
-  font-size: 0.98rem;
+  text-transform: uppercase;
 }
 
 .legal-panel {
@@ -843,7 +804,7 @@ p {
 .form-field textarea:focus {
   outline: 0;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(244, 116, 13, 0.18);
+  box-shadow: 0 0 0 4px rgba(243, 113, 53, 0.18);
 }
 
 .form-status {
@@ -856,7 +817,7 @@ p {
   padding-block: clamp(76px, 10vw, 130px);
   color: var(--color-white);
   background:
-    linear-gradient(135deg, rgba(28, 34, 43, 0.95), rgba(28, 34, 43, 0.84)),
+    linear-gradient(135deg, rgba(43, 50, 58, 0.95), rgba(43, 50, 58, 0.84)),
     url("../img/pattern/pattern-engineering.png") center / 460px;
 }
 
@@ -873,7 +834,7 @@ p {
 .footer {
   padding-block: 72px 26px;
   color: rgba(255, 255, 255, 0.76);
-  background: #101010;
+  background: #1f242a;
 }
 
 .footer__grid {
@@ -1005,7 +966,7 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(28, 34, 43, 0.94), rgba(28, 34, 43, 0.72)),
+    linear-gradient(90deg, rgba(43, 50, 58, 0.94), rgba(43, 50, 58, 0.72)),
     url("../img/hero/hero-main.png") center / cover;
 }
 
@@ -1055,7 +1016,8 @@ p {
   grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
 }
 
-.project-detail-card.is-hidden {
+.project-detail-card.is-hidden,
+.gallery-item.is-hidden {
   display: none;
 }
 
@@ -1098,7 +1060,7 @@ p {
   padding-block: 120px;
   color: var(--color-white);
   background:
-    linear-gradient(135deg, rgba(28, 34, 43, 0.92), rgba(28, 34, 43, 0.86)),
+    linear-gradient(135deg, rgba(43, 50, 58, 0.92), rgba(43, 50, 58, 0.86)),
     url("../img/hero/hero-main.png") center / cover;
 }
 
@@ -1190,7 +1152,7 @@ p {
   .service-grid,
   .feature-grid,
   .project-preview-grid,
-  .advantage-grid,
+  .quote-grid,
   .sector-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1227,7 +1189,7 @@ p {
   .service-grid,
   .feature-grid,
   .project-preview-grid,
-  .advantage-grid,
+  .quote-grid,
   .sector-grid,
   .gallery-grid,
   .stats__grid,
@@ -1243,7 +1205,7 @@ p {
   .contact-form,
   .statement-card,
   .feature-card,
-  .advantage-card,
+  .quote-card,
   .legal-panel {
     border-radius: 12px;
   }

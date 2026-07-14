@@ -1,8 +1,8 @@
 {
   "order": 4,
   "featured": false,
-  "category": "laboratory survey",
-  "tag": "Engineering Support",
+  "category": "survey",
+  "tag": "Dokumentasi Lapangan",
   "title": "Dokumentasi Aktivitas Lapangan",
   "description": "Dokumentasi teknis untuk memastikan progres pekerjaan dan kebutuhan proyek tercatat dengan baik.",
   "preview_description": "Dokumentasi teknis untuk progres dan kebutuhan proyek.",
@@ -11,5 +11,5 @@
   "caption": "Dokumentasi Aktivitas Lapangan",
   "location": "Banten",
   "year": "2026",
-  "work": "Engineering Documentation"
+  "work": "Dokumentasi Teknis Lapangan"
 }

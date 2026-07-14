@@ -1,4 +1,4 @@
-const CACHE_NAME = "hksi-production-v4-legality-removed";
+const CACHE_NAME = "hksi-production-v5-brand-gallery-update";
 
 const PRECACHE_URLS = [
   "./",
@@ -25,7 +25,7 @@ const PRECACHE_URLS = [
   "./assets/img/gallery/field-laboratory.png",
   "./assets/img/gallery/material-support.png",
   "./assets/img/gallery/survey-work.png",
-  "./assets/img/gallery/engineering-documentation.png",
+  "./assets/img/gallery/field-documentation.png",
   "./content/settings.json",
   "./content/seo.json",
   "./content/hero.json",
@@ -50,9 +50,9 @@ const PRECACHE_URLS = [
   "./content/gallery/field-laboratory.json",
   "./content/gallery/material-support.json",
   "./content/gallery/survey-work.json",
-  "./content/gallery/engineering-documentation.json",
+  "./content/gallery/field-documentation.json",
   "./content/clients/section.json",
-  "./content/advantages/section.json"
+  "./content/testimonials/section.json"
 ];
 
 self.addEventListener("install", (event) => {
