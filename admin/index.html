@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Content Manager | HKSI</title>
-  <!-- Decap CMS (formerly Netlify CMS) -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- config.yml in this same folder is loaded automatically -->
+  <!-- Decap CMS (formerly Netlify CMS) — pinned to an exact known-working
+       version. Do not use a floating range like ^3.0.0 here: an upstream
+       update could silently break /admin with no change on our side. -->
+  <script src="https://unpkg.com/decap-cms@3.14.1/dist/decap-cms.js"></script>
 </body>
 </html>
