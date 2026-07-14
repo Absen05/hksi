@@ -1,4 +1,4 @@
-const CACHE_NAME = "hksi-production-v6-values-team-sections";
+const CACHE_NAME = "hksi-production-v7-gallery-restructure";
 
 const PRECACHE_URLS = [
   "./",
@@ -48,13 +48,7 @@ const PRECACHE_URLS = [
   "./content/projects/laboratory-material.json",
   "./content/projects/material-supply.json",
   "./content/projects/survey-measurement.json",
-  "./content/projects/field-documentation.json",
-  "./content/gallery/field-laboratory.json",
-  "./content/gallery/material-support.json",
-  "./content/gallery/survey-work.json",
-  "./content/gallery/field-documentation.json",
-  "./content/clients/section.json",
-  "./content/testimonials/section.json"
+  "./content/projects/field-documentation.json"
 ];
 
 self.addEventListener("install", (event) => {

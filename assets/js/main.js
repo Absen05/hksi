@@ -32,15 +32,7 @@
       "content/projects/survey-measurement.json",
       "content/projects/field-documentation.json"
     ],
-    gallerySection: "content/gallery.json",
-    gallery: [
-      "content/gallery/field-laboratory.json",
-      "content/gallery/material-support.json",
-      "content/gallery/survey-work.json",
-      "content/gallery/field-documentation.json"
-    ],
-    clients: "content/clients/section.json",
-    testimonials: "content/testimonials/section.json"
+    gallerySection: "content/gallery.json"
   };
 
   let siteContent = {};
@@ -83,10 +75,7 @@
       services,
       projectsSection,
       projects,
-      gallerySection,
-      gallery,
-      clients,
-      testimonials
+      gallerySection
     ] = await Promise.all([
       loadContentFile(contentPaths.settings),
       loadContentFile(contentPaths.seo),
@@ -105,11 +94,22 @@
       Promise.all(contentPaths.services.map(loadContentFile)),
       loadContentFile(contentPaths.projectsSection),
       Promise.all(contentPaths.projects.map(loadContentFile)),
-      loadContentFile(contentPaths.gallerySection),
-      Promise.all(contentPaths.gallery.map(loadContentFile)),
-      loadContentFile(contentPaths.clients),
-      loadContentFile(contentPaths.testimonials)
+      loadContentFile(contentPaths.gallerySection)
     ]);
+
+    // Gallery photos live inside gallerySection itself, grouped by service
+    // category (photos_supply / photos_laboratory / photos_survey). This
+    // lets editors add photos in the CMS without picking an order number
+    // or category dropdown per photo — the category is implicit from
+    // which list they add to, and order follows list position.
+    const galleryCategoryLists = [
+      ["supply", gallerySection.photos_supply || []],
+      ["laboratory", gallerySection.photos_laboratory || []],
+      ["survey", gallerySection.photos_survey || []]
+    ];
+    const gallery = galleryCategoryLists.flatMap(([category, photos]) =>
+      photos.map((photo) => ({ ...photo, category }))
+    );
 
     return {
       settings,
@@ -130,9 +130,7 @@
       projectsSection,
       projects: projects.sort((a, b) => a.order - b.order),
       gallerySection,
-      gallery: gallery.sort((a, b) => a.order - b.order),
-      clients,
-      testimonials
+      gallery
     };
   }
 
@@ -436,19 +434,7 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="clients-title">
-        <div class="container">
-          <div class="section__header reveal">
-            <p class="eyebrow">${escapeHtml(content.clients.eyebrow)}</p>
-            <h2 id="clients-title">${escapeHtml(content.clients.title)}</h2>
-          </div>
-          <div class="sector-grid">
-            ${content.clients.items.map((item) => `<div class="sector reveal">${item.logo ? `<img src="${attr(item.logo)}" alt="${attr(item.name)}">` : escapeHtml(item.name)}</div>`).join("")}
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--muted" aria-labelledby="team-title">
+      <section class="section" aria-labelledby="team-title">
         <div class="container">
           <div class="section__header reveal">
             <p class="eyebrow">${escapeHtml(content.team.eyebrow)}</p>
@@ -460,23 +446,6 @@
                 <h3>${escapeHtml(item.name)}</h3>
                 <p>${escapeHtml(item.role)}</p>
               </article>
-            `).join("")}
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="testimonials" aria-labelledby="trust-title">
-        <div class="container">
-          <div class="section__header reveal">
-            <p class="eyebrow">${escapeHtml(content.testimonials.eyebrow)}</p>
-            <h2 id="trust-title">${escapeHtml(content.testimonials.title)}</h2>
-          </div>
-          <div class="quote-grid">
-            ${content.testimonials.items.map((item) => `
-              <figure class="quote-card reveal">
-                <blockquote>${escapeHtml(item.quote)}</blockquote>
-                <figcaption>${escapeHtml(item.author)}</figcaption>
-              </figure>
             `).join("")}
           </div>
         </div>

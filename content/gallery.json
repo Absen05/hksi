@@ -19,5 +19,31 @@
       "label": "Survey & Pengukuran",
       "value": "survey"
     }
+  ],
+  "photos_supply": [
+    {
+      "image": "assets/img/gallery/material-support.png",
+      "alt": "Dukungan material proyek HKSI",
+      "caption": "Dukungan material proyek"
+    }
+  ],
+  "photos_laboratory": [
+    {
+      "image": "assets/img/gallery/field-laboratory.png",
+      "alt": "Aktivitas laboratorium lapangan HKSI",
+      "caption": "Aktivitas laboratorium lapangan"
+    }
+  ],
+  "photos_survey": [
+    {
+      "image": "assets/img/gallery/survey-work.png",
+      "alt": "Survey pekerjaan lapangan HKSI",
+      "caption": "Survey pekerjaan lapangan"
+    },
+    {
+      "image": "assets/img/gallery/field-documentation.png",
+      "alt": "Dokumentasi teknis lapangan HKSI",
+      "caption": "Dokumentasi teknis lapangan"
+    }
   ]
 }

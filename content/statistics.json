@@ -18,8 +18,8 @@
     },
     {
       "value": 24,
-      "suffix": "+",
-      "label": "Jam Respons Awal"
+      "suffix": "",
+      "label": "Jam Respons Maksimal"
     }
   ]
 }
